@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3C44C8</color>
+    <color name="colorPrimary">#cd201f</color>
+    <color name="colorPrimaryDark">#cd201f</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorRecover">#54A06A</color>
+    <color name="colorRecover">#338e53</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="text_dark_blue">#2c3e50</color>
+    <color name="text_headline">#1C2C40</color>
+
+    <color name="color_infected">#f7953d</color>
+    <color name="color_death">#FF1744</color>
+    <color name="color_life">#28A745</color>
+    <color name="color_serious_critical">#7E57C2</color>
+    <color name="color_total_death">#F50057</color>
+    <color name="color_total_cases">#007BFF</color>
+
+    <color name="bg_card_dash_board">#f8f8f8</color>
+    <color name="bg_card_item_blue">#448AFF</color>
+    <color name="bg_card_item_red">#FF5252</color>
+    <color name="bg_card_item_blue_grey">#607D8B</color>
+    <color name="bg_card_item_purple">#7E57C2</color>
+
+
 </resources>

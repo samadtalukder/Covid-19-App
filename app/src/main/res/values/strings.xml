@@ -7,4 +7,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="corona_hospital">Corona\nHospital</string>
+    <string name="emergency_helpline">Emergency\nHelpline</string>
+    <string name="health_tips">Health\nTips</string>
+    <string name="corona_test">Corona\nTest</string>
+    <string name="total_cases_per_1m_population">Infected Per 1m Population</string>
+    <string name="deaths_per_1m_population">Deaths Per 1m Population</string>
+    <string name="total_infected">Total Infected</string>
+    <string name="total_death">Total Death</string>
+    <string name="total_recover">Total Recover</string>
+    <string name="serious_critical">Serious Critical</string>
 </resources>

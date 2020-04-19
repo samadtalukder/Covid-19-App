@@ -1,16 +1,1332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
 
-    <me.ibrahimsn.lib.SmoothBottomBar
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:backgroundColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_bottom"
-        tools:layout_editor_absoluteX="1dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="19 April 2020"
+                            android:layout_weight="1"
+                            android:textColor="@color/text_dark_blue"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/userName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingStart="5dp"
+                            android:text="Bangladesh"
+                            android:gravity="right"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/bg_card_item_red"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="17dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="start|center"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_hospital" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/corona_hospital"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/bg_card_item_blue"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="17dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="start|center"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_emergency_call" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/emergency_helpline"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/bg_card_item_purple"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="17dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="start|center"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_health_tips" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/health_tips"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/bg_card_item_blue_grey"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="17dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="start|center"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_corona_test" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/corona_test"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+                    <!-- Global Cases UI -->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardBackgroundColor="@color/bg_card_dash_board"
+                        app:cardCornerRadius="15sp"
+                        app:cardElevation="0dp"
+                        app:contentPadding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:paddingEnd="5dp"
+                                    android:text="Global Cases"
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="20sp" />
+
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignParentEnd="true"
+                                    app:srcCompat="@drawable/ic_pandemic" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:paddingEnd="5dp"
+                                    android:text="Last Update:"
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_status_last_update"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="২৬-০৩-২০২০"
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_infected"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_infected" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_total_infected"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_infected"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:id="@+id/tv_new_infected"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_infected"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_death"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_death" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_total_death"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_death"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:id="@+id/tv_new_death"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_death"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_recover"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_recover" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_total_recovered"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_life"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:visibility="gone"
+                                                android:textColor="@color/color_life"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/serious_critical"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_critical" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_serious_critical"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_serious_critical"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:visibility="gone"
+                                                android:textColor="@color/color_serious_critical"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/deaths_per_1m_population"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="0"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_death" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_death_per_1m"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_total_death"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:visibility="gone"
+                                                android:textColor="@color/color_total_death"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_cases_per_1m_population"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="0"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_virus" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_infected_per_1m"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_total_cases"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:visibility="gone"
+                                                android:textColor="@color/color_total_cases"
+                                                android:textSize="@dimen/text_digit_size_small" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- More Statistics UI -->
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/quarantineIsolation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="#147efb"
+                        app:cardCornerRadius="15sp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="More Statistics"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="@dimen/text_digit_size_large" />
+
+                                <ImageView
+                                    android:id="@+id/icon_view1"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginRight="10dp"
+                                    app:srcCompat="@drawable/ic_emergency" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Country Cases UI -->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/bg_card_dash_board"
+                        app:cardCornerRadius="15sp"
+                        app:cardElevation="0dp"
+                        app:contentPadding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:paddingEnd="5dp"
+                                    android:text="Global Cases"
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="20sp" />
+
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignParentEnd="true"
+                                    app:srcCompat="@drawable/ic_emergency" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:paddingEnd="5dp"
+                                    android:text="Last Update:"
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="২৬-০৩-২০২০"
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_infected"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="24dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="5dp"
+                                                app:srcCompat="@drawable/ic_emergency" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_infected"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_infected"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_death"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="24dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="5dp"
+                                                app:srcCompat="@drawable/ic_emergency" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_death"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_death"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_recover"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="24dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="5dp"
+                                                app:srcCompat="@drawable/ic_emergency" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_life"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_life"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/serious_critical"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="24dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="1"
+                                                android:padding="5dp"
+                                                app:srcCompat="@drawable/ic_emergency" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_serious_critical"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_serious_critical"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/deaths_per_1m_population"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="24dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="0"
+                                                android:padding="5dp"
+                                                app:srcCompat="@drawable/ic_emergency" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_total_death"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_total_death"
+                                                android:textSize="@dimen/text_digit_size_small" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#fff"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_cases_per_1m_population"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="24dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="0"
+                                                android:padding="5dp"
+                                                app:srcCompat="@drawable/ic_emergency" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="2,338,335"
+                                                android:textColor="@color/color_total_cases"
+                                                android:textSize="@dimen/text_digit_size_large"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="3dp"
+                                                android:layout_weight="1"
+                                                android:text="(+5000)"
+                                                android:textColor="@color/color_total_cases"
+                                                android:textSize="@dimen/text_digit_size_small" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

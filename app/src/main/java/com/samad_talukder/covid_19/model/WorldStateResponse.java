@@ -1,6 +1,5 @@
 package com.samad_talukder.covid_19.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class WorldStateResponse {

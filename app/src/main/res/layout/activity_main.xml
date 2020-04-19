@@ -39,8 +39,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="19 April 2020"
                             android:layout_weight="1"
+                            android:text="19 April 2020"
                             android:textColor="@color/text_dark_blue"
                             android:textSize="16sp" />
 
@@ -49,9 +49,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:gravity="right"
                             android:paddingStart="5dp"
                             android:text="Bangladesh"
-                            android:gravity="right"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -513,9 +513,9 @@
                                                 android:layout_marginLeft="3dp"
                                                 android:layout_weight="1"
                                                 android:text="(+5000)"
-                                                android:visibility="gone"
                                                 android:textColor="@color/color_life"
-                                                android:textSize="@dimen/text_digit_size_small" />
+                                                android:textSize="@dimen/text_digit_size_small"
+                                                android:visibility="gone" />
                                         </LinearLayout>
 
 
@@ -586,9 +586,9 @@
                                                 android:layout_marginLeft="3dp"
                                                 android:layout_weight="1"
                                                 android:text="(+5000)"
-                                                android:visibility="gone"
                                                 android:textColor="@color/color_serious_critical"
-                                                android:textSize="@dimen/text_digit_size_small" />
+                                                android:textSize="@dimen/text_digit_size_small"
+                                                android:visibility="gone" />
                                         </LinearLayout>
 
 
@@ -667,9 +667,9 @@
                                                 android:layout_marginLeft="3dp"
                                                 android:layout_weight="1"
                                                 android:text="(+5000)"
-                                                android:visibility="gone"
                                                 android:textColor="@color/color_total_death"
-                                                android:textSize="@dimen/text_digit_size_small" />
+                                                android:textSize="@dimen/text_digit_size_small"
+                                                android:visibility="gone" />
                                         </LinearLayout>
 
 
@@ -740,9 +740,9 @@
                                                 android:layout_marginLeft="3dp"
                                                 android:layout_weight="1"
                                                 android:text="(+5000)"
-                                                android:visibility="gone"
                                                 android:textColor="@color/color_total_cases"
-                                                android:textSize="@dimen/text_digit_size_small" />
+                                                android:textSize="@dimen/text_digit_size_small"
+                                                android:visibility="gone" />
 
                                         </LinearLayout>
 
@@ -759,7 +759,6 @@
                     <!-- More Statistics UI -->
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/quarantineIsolation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -794,7 +793,6 @@
                                     android:textSize="@dimen/text_digit_size_large" />
 
                                 <ImageView
-                                    android:id="@+id/icon_view1"
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_marginRight="10dp"
@@ -810,7 +808,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         app:cardBackgroundColor="@color/bg_card_dash_board"
                         app:cardCornerRadius="15sp"
                         app:cardElevation="0dp"
@@ -827,11 +825,23 @@
                                 android:layout_marginBottom="5dp">
 
                                 <TextView
+                                    android:id="@+id/tv_country_cases"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_vertical"
                                     android:paddingEnd="5dp"
-                                    android:text="Global Cases"
+                                    android:text="Country Cases: "
+                                    android:textColor="@color/text_dark_blue"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_country_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+
+                                    android:layout_toEndOf="@id/tv_country_cases"
+                                    android:text="(Bangladesh)"
                                     android:textColor="@color/text_dark_blue"
                                     android:textSize="20sp" />
 
@@ -840,7 +850,7 @@
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_alignParentEnd="true"
-                                    app:srcCompat="@drawable/ic_emergency" />
+                                    app:srcCompat="@drawable/ic_pandemic" />
 
                             </RelativeLayout>
 
@@ -859,6 +869,7 @@
                                     android:textSize="12sp" />
 
                                 <TextView
+                                    android:id="@+id/tv_status_last_update_by_country"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-light"
@@ -905,12 +916,12 @@
                                                 android:textSize="12sp" />
 
                                             <ImageView
-                                                android:layout_width="24dp"
-                                                android:layout_height="24dp"
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
                                                 android:layout_gravity="start|center"
                                                 android:layout_weight="1"
-                                                android:padding="5dp"
-                                                app:srcCompat="@drawable/ic_emergency" />
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_infected" />
 
 
                                         </LinearLayout>
@@ -921,6 +932,7 @@
                                             android:orientation="horizontal">
 
                                             <TextView
+                                                android:id="@+id/tv_total_infected_by_country"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
@@ -930,6 +942,7 @@
                                                 android:textStyle="bold" />
 
                                             <TextView
+                                                android:id="@+id/tv_new_infected_by_country"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginLeft="3dp"
@@ -937,8 +950,8 @@
                                                 android:text="(+5000)"
                                                 android:textColor="@color/color_infected"
                                                 android:textSize="@dimen/text_digit_size_small" />
-                                        </LinearLayout>
 
+                                        </LinearLayout>
 
                                     </LinearLayout>
 
@@ -976,12 +989,12 @@
                                                 android:textSize="12sp" />
 
                                             <ImageView
-                                                android:layout_width="24dp"
-                                                android:layout_height="24dp"
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
                                                 android:layout_gravity="start|center"
                                                 android:layout_weight="1"
-                                                android:padding="5dp"
-                                                app:srcCompat="@drawable/ic_emergency" />
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_death" />
 
 
                                         </LinearLayout>
@@ -992,6 +1005,7 @@
                                             android:orientation="horizontal">
 
                                             <TextView
+                                                android:id="@+id/tv_total_death_by_country"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
@@ -1001,6 +1015,7 @@
                                                 android:textStyle="bold" />
 
                                             <TextView
+                                                android:id="@+id/tv_new_death_by_country"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginLeft="3dp"
@@ -1009,7 +1024,6 @@
                                                 android:textColor="@color/color_death"
                                                 android:textSize="@dimen/text_digit_size_small" />
                                         </LinearLayout>
-
 
                                     </LinearLayout>
 
@@ -1055,39 +1069,25 @@
                                                 android:textSize="12sp" />
 
                                             <ImageView
-                                                android:layout_width="24dp"
-                                                android:layout_height="24dp"
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
                                                 android:layout_gravity="start|center"
                                                 android:layout_weight="1"
-                                                android:padding="5dp"
-                                                app:srcCompat="@drawable/ic_emergency" />
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_recover" />
 
 
                                         </LinearLayout>
 
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
+                                        <TextView
+                                            android:id="@+id/tv_total_recovered_by_country"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                android:text="2,338,335"
-                                                android:textColor="@color/color_life"
-                                                android:textSize="@dimen/text_digit_size_large"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginLeft="3dp"
-                                                android:layout_weight="1"
-                                                android:text="(+5000)"
-                                                android:textColor="@color/color_life"
-                                                android:textSize="@dimen/text_digit_size_small" />
-                                        </LinearLayout>
+                                            android:layout_weight="1"
+                                            android:text="2,338,335"
+                                            android:textColor="@color/color_life"
+                                            android:textSize="@dimen/text_digit_size_large"
+                                            android:textStyle="bold" />
 
 
                                     </LinearLayout>
@@ -1126,39 +1126,24 @@
                                                 android:textSize="12sp" />
 
                                             <ImageView
-                                                android:layout_width="24dp"
-                                                android:layout_height="24dp"
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
                                                 android:layout_gravity="start|center"
                                                 android:layout_weight="1"
-                                                android:padding="5dp"
-                                                app:srcCompat="@drawable/ic_emergency" />
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_critical" />
 
 
                                         </LinearLayout>
 
-                                        <LinearLayout
+                                        <TextView
+                                            android:id="@+id/tv_serious_critical_by_country"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                android:text="2,338,335"
-                                                android:textColor="@color/color_serious_critical"
-                                                android:textSize="@dimen/text_digit_size_large"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginLeft="3dp"
-                                                android:layout_weight="1"
-                                                android:text="(+5000)"
-                                                android:textColor="@color/color_serious_critical"
-                                                android:textSize="@dimen/text_digit_size_small" />
-                                        </LinearLayout>
+                                            android:text="2,338,335"
+                                            android:textColor="@color/color_serious_critical"
+                                            android:textSize="@dimen/text_digit_size_large"
+                                            android:textStyle="bold" />
 
 
                                     </LinearLayout>
@@ -1171,7 +1156,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
+                                android:layout_marginBottom="5dp"
                                 android:weightSum="2">
 
                                 <androidx.cardview.widget.CardView
@@ -1205,39 +1190,25 @@
                                                 android:textSize="12sp" />
 
                                             <ImageView
-                                                android:layout_width="24dp"
-                                                android:layout_height="24dp"
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
                                                 android:layout_gravity="start|center"
                                                 android:layout_weight="0"
-                                                android:padding="5dp"
-                                                app:srcCompat="@drawable/ic_emergency" />
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_death" />
 
 
                                         </LinearLayout>
 
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
+                                        <TextView
+                                            android:id="@+id/tv_death_per_1m_by_country"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                android:text="2,338,335"
-                                                android:textColor="@color/color_total_death"
-                                                android:textSize="@dimen/text_digit_size_large"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginLeft="3dp"
-                                                android:layout_weight="1"
-                                                android:text="(+5000)"
-                                                android:textColor="@color/color_total_death"
-                                                android:textSize="@dimen/text_digit_size_small" />
-                                        </LinearLayout>
+                                            android:layout_weight="1"
+                                            android:text="2,338,335"
+                                            android:textColor="@color/color_total_death"
+                                            android:textSize="@dimen/text_digit_size_large"
+                                            android:textStyle="bold" />
 
 
                                     </LinearLayout>
@@ -1276,40 +1247,24 @@
                                                 android:textSize="12sp" />
 
                                             <ImageView
-                                                android:layout_width="24dp"
-                                                android:layout_height="24dp"
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
                                                 android:layout_gravity="start|center"
                                                 android:layout_weight="0"
-                                                android:padding="5dp"
-                                                app:srcCompat="@drawable/ic_emergency" />
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_virus" />
 
 
                                         </LinearLayout>
 
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
+                                        <TextView
+                                            android:id="@+id/tv_infected_per_1m_by_country"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                android:text="2,338,335"
-                                                android:textColor="@color/color_total_cases"
-                                                android:textSize="@dimen/text_digit_size_large"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginLeft="3dp"
-                                                android:layout_weight="1"
-                                                android:text="(+5000)"
-                                                android:textColor="@color/color_total_cases"
-                                                android:textSize="@dimen/text_digit_size_small" />
-
-                                        </LinearLayout>
+                                            android:text="2,338,335"
+                                            android:textColor="@color/color_total_cases"
+                                            android:textSize="@dimen/text_digit_size_large"
+                                            android:textStyle="bold" />
 
                                     </LinearLayout>
 

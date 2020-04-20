@@ -21,6 +21,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiClient implements URLConstant {
     private static Retrofit retrofit = null;
+    private static Retrofit customRetrofit = null;
 
     private static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
@@ -32,6 +33,18 @@ public class ApiClient implements URLConstant {
                     .build();
         }
         return retrofit;
+    }
+
+    public static Retrofit getRetrofitInstance(String CUSTOM_BASE_URL) {
+        if (customRetrofit == null) {
+            customRetrofit = new Retrofit.Builder()
+                    .baseUrl(CUSTOM_BASE_URL)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .client(okHttpClient())
+                    .build();
+        }
+        return customRetrofit;
     }
 
     private static OkHttpClient okHttpClient() {
@@ -64,4 +77,6 @@ public class ApiClient implements URLConstant {
     public static ApiConfig getApiService() {
         return getRetrofitInstance().create(ApiConfig.class);
     }
+
+
 }

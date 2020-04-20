@@ -1,6 +1,7 @@
 package com.samad_talukder.covid_19.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.samad_talukder.covid_19.utils.NullRemoveUtil;
 
 import java.util.List;
 
@@ -12,11 +13,11 @@ public class StateByCountryResponse {
     private List<LatestStatByCountry> latestStatByCountry;
 
     public String getCountry() {
-        return country;
+        return NullRemoveUtil.getNotNull(country);
     }
 
     public List<LatestStatByCountry> getLatestStatByCountry() {
-        return latestStatByCountry;
+        return NullRemoveUtil.getNotNull(latestStatByCountry);
     }
 
 

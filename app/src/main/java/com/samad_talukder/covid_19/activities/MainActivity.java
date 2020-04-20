@@ -1,27 +1,30 @@
 package com.samad_talukder.covid_19.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.samad_talukder.covid_19.R;
+import com.samad_talukder.covid_19.model.CountryResponse;
 import com.samad_talukder.covid_19.model.LatestStatByCountry;
 import com.samad_talukder.covid_19.model.StateByCountryResponse;
 import com.samad_talukder.covid_19.model.WorldStateResponse;
-import com.samad_talukder.covid_19.view_model.StatByCountryViewModel;
+import com.samad_talukder.covid_19.session.SharedHelper;
+import com.samad_talukder.covid_19.utils.AppConstant;
 import com.samad_talukder.covid_19.view_model.WorldStatViewModel;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,14 +56,14 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_infected_per_1m)
     TextView tvInfectedPer1m;
 
-    @BindView(R.id.swipeRefresh)
-    SwipeRefreshLayout swipeRefresh;
+    @BindView(R.id.swipeRefreshHome)
+    SwipeRefreshLayout swipeRefreshHome;
 
     @BindView(R.id.root)
     RelativeLayout root;
 
-    @BindView(R.id.tv_country_cases)
-    TextView tvCountryCases;
+    /*@BindView(R.id.tv_country_cases)
+    TextView tvCountryCases;*/
 
     @BindView(R.id.tv_country_name)
     TextView tvCountryName;
@@ -92,31 +95,65 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_infected_per_1m_by_country)
     TextView tvInfectedPer1mByCountry;
 
+    @BindView(R.id.iv_select_country)
+    ImageView ivSelectCountry;
+    @BindView(R.id.tv_view_all_country)
+    TextView tvViewAllCountry;
+
+    private WorldStatViewModel worldStatViewModel;
+    private SharedHelper sharedHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        WorldStatViewModel worldStatViewModel = ViewModelProviders.of(this).get(WorldStatViewModel.class);
-        StatByCountryViewModel statByCountryViewModel = ViewModelProviders.of(this).get(StatByCountryViewModel.class);
+        sharedHelper = new SharedHelper(this);
 
+        worldStatViewModel = ViewModelProviders.of(this).get(WorldStatViewModel.class);
 
-        worldStatViewModel.getWorldStateLiveData().observe(this, new Observer<WorldStateResponse>() {
-            @Override
-            public void onChanged(WorldStateResponse worldStateResponse) {
-                setGlobalData(worldStateResponse);
-            }
+        /*worldStatViewModel.getCountryLiveData().observe(this, countryResponses -> {
+            getCountryData(countryResponses);
+            swipeRefreshHome.setRefreshing(false);
+        });*/
+
+        SharedHelper.writeKey(AppConstant.KEY_COUNTRY_NAME, "USA");
+
+        String country = SharedHelper.readKey(AppConstant.KEY_COUNTRY_NAME);
+
+        worldStatViewModel.getWorldStateLiveData().observe(this, worldStateResponse -> {
+            setGlobalData(worldStateResponse);
+            swipeRefreshHome.setRefreshing(false);
         });
 
-        statByCountryViewModel.getWorldStateLiveData("Bangladesh").observe(this, new Observer<StateByCountryResponse>() {
-            @Override
-            public void onChanged(StateByCountryResponse stateByCountryResponse) {
-                setStateByCountryData(stateByCountryResponse);
-            }
+        worldStatViewModel.getStateByCountryLiveData(country).observe(this, stateByCountryResponse -> {
+            setStateByCountryData(stateByCountryResponse);
+            swipeRefreshHome.setRefreshing(false);
+        });
+
+        swipeRefreshHome.setOnRefreshListener(() -> {
+
+            worldStatViewModel.getWorldStateLiveData().observe(this, this::setGlobalData);
+
+            worldStatViewModel.getStateByCountryLiveData("Bangladesh").observe(this, this::setStateByCountryData);
         });
 
 
+    }
+
+    @OnClick(R.id.iv_select_country)
+    public void selectCountry() {
+
+    }
+
+    @OnClick(R.id.tv_view_all_country)
+    public void goToViewAllCountry() {
+        startActivity(new Intent(this,AllCountriesActivity.class));
+    }
+
+    private void getCountryData(List<CountryResponse> countryResponse) {
+        Timber.e(countryResponse.get(0).getName());
     }
 
     private void setStateByCountryData(StateByCountryResponse stateByCountryResponse) {

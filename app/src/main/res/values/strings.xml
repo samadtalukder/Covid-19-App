@@ -17,4 +17,9 @@
     <string name="total_death">Total Death</string>
     <string name="total_recover">Total Recover</string>
     <string name="serious_critical">Serious Critical</string>
+    <string name="global_cases">Global Cases</string>
+    <string name="view_all_country">View All Country</string>
+    <string name="total_tests_per_1m">Total Tests Per 1m</string>
+    <string name="last_update">Last Update:</string>
+    <string name="total_tests">Total Tests</string>
 </resources>

@@ -2,9 +2,11 @@ package com.samad_talukder.covid_19.api;
 
 public interface URLConstant {
     String BASE_URL = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/";
+    String BASE_URL_COUNTRY = "https://us-central1-covid19stats-78dd3.cloudfunctions.net/";
 
     String WORLD_STAT = "worldstat.php";
     String AFFECTED_COUNTRY = "affected.php";
+    String COVID_19_COUNTRIES = "covid19countries";
     String CASES_BY_COUNTRY = "cases_by_country.php";
     String LATEST_STAT_BY_COUNTRY = "latest_stat_by_country.php";
     String CASES_BY_PARTICULAR_COUNTRY = "cases_by_particular_country.php";

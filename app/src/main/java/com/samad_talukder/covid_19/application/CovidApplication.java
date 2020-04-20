@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.res.Configuration;
 
 import androidx.annotation.NonNull;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 
 import com.samad_talukder.covid_19.utils.LogUtils;
 
-public class CovidApplication extends Application {
+public class CovidApplication extends MultiDexApplication {
 
     @Override
     public void onCreate() {
@@ -25,5 +27,6 @@ public class CovidApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

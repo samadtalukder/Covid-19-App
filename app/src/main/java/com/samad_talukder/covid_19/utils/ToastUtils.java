@@ -8,7 +8,8 @@ import com.samad_talukder.covid_19.R;
 
 import es.dmoral.toasty.Toasty;
 
-public class ToastUtils {
+public interface ToastUtils {
+
     public static void successToast(Context context, String str) {
         Toasty.success(context, str, Toasty.LENGTH_SHORT, true).show();
     }

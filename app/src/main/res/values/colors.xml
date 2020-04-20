@@ -20,6 +20,7 @@
     <color name="bg_card_item_red">#FF5252</color>
     <color name="bg_card_item_blue_grey">#607D8B</color>
     <color name="bg_card_item_purple">#7E57C2</color>
+    <color name="color_search_box">#3d8e8e93</color>
 
 
 </resources>

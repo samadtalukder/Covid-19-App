@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
+        android:id="@+id/swipeRefreshHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -34,25 +34,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="19 April 2020"
                             android:textColor="@color/text_dark_blue"
                             android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/userName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:paddingStart="5dp"
-                            android:text="Bangladesh"
-                            android:textSize="18sp" />
+                        <ImageView
+                            android:id="@+id/iv_select_country"
+                            android:layout_width="40dp"
+                            android:layout_height="34dp"
+                            app:srcCompat="@drawable/ic_pandemic" />
                     </LinearLayout>
 
 
@@ -253,16 +250,27 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center_vertical"
                                     android:paddingEnd="5dp"
-                                    android:text="Global Cases"
+                                    android:text="@string/global_cases"
                                     android:textColor="@color/text_dark_blue"
                                     android:textSize="20sp" />
 
 
-                                <ImageView
+                                <TextView
+                                    android:id="@+id/tv_view_all_country"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:layout_alignParentEnd="true"
+                                    android:text="@string/view_all_country"
+                                    android:background="@drawable/bg_view_all"
+                                    android:textColor="@color/colorPrimary"
+                                    android:padding="5dp"
+                                    android:textSize="12sp" />
+                                <!--<ImageView
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_alignParentEnd="true"
-                                    app:srcCompat="@drawable/ic_pandemic" />
+                                    app:srcCompat="@drawable/ic_pandemic" />-->
 
                             </RelativeLayout>
 
@@ -807,7 +815,6 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginBottom="5dp"
                         app:cardBackgroundColor="@color/bg_card_dash_board"
                         app:cardCornerRadius="15sp"
@@ -824,33 +831,16 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="5dp">
 
-                                <TextView
-                                    android:id="@+id/tv_country_cases"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical"
-                                    android:paddingEnd="5dp"
-                                    android:text="Country Cases: "
-                                    android:textColor="@color/text_dark_blue"
-                                    android:textSize="20sp" />
 
                                 <TextView
                                     android:id="@+id/tv_country_name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_vertical"
-
-                                    android:layout_toEndOf="@id/tv_country_cases"
-                                    android:text="(Bangladesh)"
+                                    android:text="Bangladesh"
                                     android:textColor="@color/text_dark_blue"
                                     android:textSize="20sp" />
 
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:layout_alignParentEnd="true"
-                                    app:srcCompat="@drawable/ic_pandemic" />
 
                             </RelativeLayout>
 
@@ -864,7 +854,7 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-light"
                                     android:paddingEnd="5dp"
-                                    android:text="Last Update:"
+                                    android:text="@string/last_update"
                                     android:textColor="@color/text_dark_blue"
                                     android:textSize="12sp" />
 
@@ -873,7 +863,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-light"
-                                    android:text="২৬-০৩-২০২০"
+                                    android:text="00-00-0000"
                                     android:textColor="@color/text_dark_blue"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -889,7 +879,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:cardBackgroundColor="#fff"
+                                    app:cardBackgroundColor="@color/colorWhite"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="0dp"
                                     app:contentPadding="5dp">
@@ -950,8 +940,8 @@
                                                 android:text="(+5000)"
                                                 android:textColor="@color/color_infected"
                                                 android:textSize="@dimen/text_digit_size_small" />
-
                                         </LinearLayout>
+
 
                                     </LinearLayout>
 
@@ -962,7 +952,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
-                                    app:cardBackgroundColor="#fff"
+                                    app:cardBackgroundColor="@color/colorWhite"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="0dp"
                                     app:contentPadding="5dp">
@@ -1025,6 +1015,7 @@
                                                 android:textSize="@dimen/text_digit_size_small" />
                                         </LinearLayout>
 
+
                                     </LinearLayout>
 
                                 </androidx.cardview.widget.CardView>
@@ -1042,7 +1033,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:cardBackgroundColor="#fff"
+                                    app:cardBackgroundColor="@color/colorWhite"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="0dp"
                                     app:contentPadding="5dp">
@@ -1083,7 +1074,6 @@
                                             android:id="@+id/tv_total_recovered_by_country"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
                                             android:text="2,338,335"
                                             android:textColor="@color/color_life"
                                             android:textSize="@dimen/text_digit_size_large"
@@ -1099,7 +1089,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
-                                    app:cardBackgroundColor="#fff"
+                                    app:cardBackgroundColor="@color/colorWhite"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="0dp"
                                     app:contentPadding="5dp">
@@ -1138,7 +1128,7 @@
 
                                         <TextView
                                             android:id="@+id/tv_serious_critical_by_country"
-                                            android:layout_width="match_parent"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="2,338,335"
                                             android:textColor="@color/color_serious_critical"
@@ -1163,7 +1153,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:cardBackgroundColor="#fff"
+                                    app:cardBackgroundColor="@color/colorWhite"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="0dp"
                                     app:contentPadding="5dp">
@@ -1204,7 +1194,6 @@
                                             android:id="@+id/tv_death_per_1m_by_country"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
                                             android:text="2,338,335"
                                             android:textColor="@color/color_total_death"
                                             android:textSize="@dimen/text_digit_size_large"
@@ -1220,7 +1209,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
-                                    app:cardBackgroundColor="#fff"
+                                    app:cardBackgroundColor="@color/colorWhite"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="0dp"
                                     app:contentPadding="5dp">
@@ -1259,6 +1248,125 @@
 
                                         <TextView
                                             android:id="@+id/tv_infected_per_1m_by_country"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="2,338,335"
+                                            android:textColor="@color/color_total_cases"
+                                            android:textSize="@dimen/text_digit_size_large"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:weightSum="2">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="@color/colorWhite"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_tests"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="0"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_test_2" />
+
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/tv_total_tests_by_country"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="2,338,335"
+                                            android:textColor="@color/color_total_death"
+                                            android:textSize="@dimen/text_digit_size_large"
+                                            android:textStyle="bold" />
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="@color/colorWhite"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="0dp"
+                                    app:contentPadding="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:text="@string/total_tests_per_1m"
+                                                android:textColor="@color/text_headline"
+                                                android:textSize="12sp" />
+
+                                            <ImageView
+                                                android:layout_width="@dimen/icon_size_width"
+                                                android:layout_height="@dimen/icon_size_height"
+                                                android:layout_gravity="start|center"
+                                                android:layout_weight="0"
+                                                android:padding="2dp"
+                                                app:srcCompat="@drawable/ic_virus" />
+
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/tv_total_tests_per_1m_by_country"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="2,338,335"

@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="@color/bg_card_dash_board"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="0dp"
+        app:contentPadding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+
+                <TextView
+                    android:id="@+id/tv_country_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Bangladesh"
+                    android:textColor="@color/text_dark_blue"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/total_infected"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_infected" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_total_infected"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="2,338,335"
+                                android:textColor="@color/color_infected"
+                                android:textSize="@dimen/text_digit_size_large"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_new_infected"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:text="(+5000)"
+                                android:textColor="@color/color_infected"
+                                android:textSize="@dimen/text_digit_size_small" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/total_death"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_death" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_total_death"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="2,338,335"
+                                android:textColor="@color/color_death"
+                                android:textSize="@dimen/text_digit_size_large"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_new_death"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:text="(+5000)"
+                                android:textColor="@color/color_death"
+                                android:textSize="@dimen/text_digit_size_small" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/total_recover"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_recover" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_total_recovered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,338,335"
+                            android:textColor="@color/color_life"
+                            android:textSize="@dimen/text_digit_size_large"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/serious_critical"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="1"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_critical" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_serious_critical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,338,335"
+                            android:textColor="@color/color_serious_critical"
+                            android:textSize="@dimen/text_digit_size_large"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/deaths_per_1m_population"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="0"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_death" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_death_per_1m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,338,335"
+                            android:textColor="@color/color_total_death"
+                            android:textSize="@dimen/text_digit_size_large"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/total_cases_per_1m_population"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="0"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_virus" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_infected_per_1m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,338,335"
+                            android:textColor="@color/color_total_cases"
+                            android:textSize="@dimen/text_digit_size_large"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="Total Tests"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="0"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_test_2" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_total_tests"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,338,335"
+                            android:textColor="@color/color_total_death"
+                            android:textSize="@dimen/text_digit_size_large"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/total_tests_per_1m"
+                                android:textColor="@color/text_headline"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_size_width"
+                                android:layout_height="@dimen/icon_size_height"
+                                android:layout_gravity="start|center"
+                                android:layout_weight="0"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_test_2" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_total_tests_per_1m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,338,335"
+                            android:textColor="@color/color_total_cases"
+                            android:textSize="@dimen/text_digit_size_large"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
